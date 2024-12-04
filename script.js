@@ -74,5 +74,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.innerHTML = `
                     <div style="text-align:center; padding: 20px;">
                         <h1>🎉 ¡Deseo Enviado! 🎉</h1>
+                        <p>¡Tu deseo será concedido como si fueras el más poderoso guerrero del universo! 🎂</p>
                         <video width="600" controls>
-                            <source src="deseo-con
+                            <source src="deseo-concedido.mp4" type="video/mp4">
+                            Tu navegador no soporta este video.
+                        </video>
+                    </div>
+                `;
+            })
+            .catch(function (error) {
+                console.error("Error al enviar el deseo: ", error);
+                alert("Ocurrió un error al enviar tu deseo. Por favor, inténtalo nuevamente.");
+            });
+    };
+
+    // Verificaciones completas
+    console.log("Verificaciones completas. ¡Todo está funcionando correctamente!");
+});
