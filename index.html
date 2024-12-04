@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Luciana!</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Cambié el favicon -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 ¡Feliz Cumpleaños Luciana! 🔥</h1> <!-- Nombre cambiado a Luciana -->
+        <p>¡Que este día esté lleno de sonrisas, amor y muchos momentos felices, como un entrenamiento de los cazadores de demonios!</p> <!-- Mensaje adaptado -->
+        <button id="wish-button">Pide tu deseo🎁</button>
+
+        <div id="wish-input-container" style="display: none;">
+            <textarea id="wish-input" placeholder="Escribe tu deseo aquí..." rows="4" cols="50"></textarea>
+            <br>
+            <button onclick="submitWish()">🎉 Enviar deseo</button>
+        </div>
+
+        <div id="wish-message" style="display: none;">
+            <p>¡Que todos tus sueños se hagan realidad, como si fueras un cazador de demonios legendario! 🎂</p> <!-- Mensaje adaptado -->
+        </div>
+    </div>
+
+    <div class="flowers-bg">
+        <div class="flower-piece"></div>
+        <div class="flower-piece"></div>
+        <div class="flower-piece"></div>
+    </div>
+
+    <audio id="background-audio" src="song.mp3" loop></audio> <!-- Cambié la canción a la de Demon Slayer -->
+
+    <script src="script.js"></script>
+</body>
+</html>
