@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Verificar si el deseo ya fue enviado
     if (localStorage.getItem("deseoEnviado")) {
-        document.body.innerHTML = ""; // Borra todo el contenido del cuerpo si el deseo ya fue enviado
+        document.body.innerHTML = ""; // Borra todo el contenido si el deseo ya fue enviado
         return;
     }
 
     // Inicializar EmailJS
     try {
-        emailjs.init("UCDQQlPl8quzdQpn0"); // Public Key de EmailJS
+        emailjs.init("UCDQQlPl8quzdQpn0");
         console.log("EmailJS correctamente inicializado.");
     } catch (error) {
         console.error("Error al inicializar EmailJS: ", error);
@@ -74,16 +74,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.innerHTML = `
                     <div style="text-align:center; padding: 20px;">
                         <h1>🎉 ¡Deseo Enviado! 🎉</h1>
-                        <p>¡Gracias por compartir tu deseo! 💐</p>
-                    </div>
-                `;
-            })
-            .catch(function (error) {
-                console.error("Error al enviar el deseo: ", error);
-                alert("Ocurrió un error al enviar tu deseo. Por favor, inténtalo nuevamente.");
-            });
-    };
-
-    // Verificaciones completas
-    console.log("Verificaciones completas. ¡Todo está funcionando correctamente!");
-});
+                        <video width="600" controls>
+                            <source src="deseo-con
