@@ -44,12 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Botón para mostrar el contenedor de deseos
+    // Botón para mostrar el video de Shenlong y luego el contenedor de deseos
     wishButton.addEventListener("click", function () {
         console.log("Botón de 'Pide tu deseo' presionado.");
-        wishInputContainer.style.display = "block";  // Mostrar el contenedor de deseos
-        this.style.display = "none"; // Ocultar el botón
-        console.log("Contenedor de deseos mostrado y botón oculto.");
+
+        // Ocultar el botón y mostrar el video de Shenlong
+        this.style.display = "none";
+        const videoContainer = document.createElement("div");
+        videoContainer.innerHTML = `
+            <video id="shenlong-video" width="600" controls autoplay>
+                <source src="shenlong-video.mp4" type="video/mp4">
+                Tu navegador no soporta este video.
+            </video>
+        `;
+        document.body.appendChild(videoContainer);
+
+        const video = document.getElementById("shenlong-video");
+
+        // Esperar a que termine el video de Shenlong para mostrar el cuadro de texto
+        video.onended = function () {
+            videoContainer.style.display = "none"; // Ocultar video de Shenlong
+            wishInputContainer.style.display = "block"; // Mostrar contenedor de deseos
+            console.log("Video de Shenlong terminado. Ahora se puede escribir el deseo.");
+        };
 
         // Reproducir el audio al hacer clic
         backgroundAudio.play().catch((error) => {
@@ -74,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.innerHTML = `
                     <div style="text-align:center; padding: 20px;">
                         <h1>🎉 ¡Deseo Enviado! 🎉</h1>
-                        <p>¡Tu deseo será concedido como si fueras el más poderoso guerrero del universo! 🎂</p>
-                        <video width="600" controls>
+                        <p>¡Tu deseo ha sido concedido por Shenlong! 🎂</p>
+                        <video width="600" controls autoplay>
                             <source src="deseo-concedido.mp4" type="video/mp4">
                             Tu navegador no soporta este video.
                         </video>
